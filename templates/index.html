@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body ng-app="todo">
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-xs-12">
+            <ng-view></ng-view>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="bower_components/jquery/dist/jquery.js"></script>
+<script type="text/javascript" src="bower_components/angular/angular.js"></script>
+<script type="text/javascript" src="bower_components/angular-route/angular-route.js"></script>
+<script type="text/javascript" src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+<script type="text/javascript" src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+<script type="text/javascript" src="app/app.js"></script>
+<script type="text/javascript" src="app/pages/homeController.js"></script>
+<script type="text/javascript" src="app/services/todoService.js"></script>
+
+<!--<h1>Testing</h1>-->
+<!--<form id="listForm">-->
+    <!--<label for="author">Author</label>-->
+    <!--<input type="text" name="author" id="author">-->
+    <!--<label for="title">Title</label>-->
+    <!--<input type="text" name="title" id="title">-->
+    <!--<label for="description">Description</label>-->
+    <!--<textarea id="description" name="description"></textarea>-->
+    <!--<button type="submit">Submit</button>-->
+<!--</form>-->
+<!--<div class="formresult"></div>-->
+<!--<div class="lists"></div>-->
+<!--<script src="https://code.jquery.com/jquery-2.2.2.min.js"></script>-->
+<!--<script>-->
+    <!--$(function () {-->
+        <!--$.get('/api/lists').then(function (data) {-->
+            <!--$('.lists').text(JSON.stringify(data));-->
+        <!--});-->
+
+        <!--$('#listForm').on('submit', function (e) {-->
+            <!--e.preventDefault();-->
+            <!--$.post('/api/list', $(this).serializeArray(), function (result) {-->
+                <!--console.log(result);-->
+                <!--$('.formresult').html('form submitted successfully');-->
+            <!--});-->
+        <!--});-->
+    <!--});-->
+<!--</script>-->
+</body>
+</html>
