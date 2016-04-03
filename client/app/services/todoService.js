@@ -10,9 +10,17 @@
                 });
                 return d.promise;
             },
+            getCategory: function (_id) {
+                var d = $q.defer();
+                $http.get('/api/category/' + _id).then(function (data) {
+                    d.resolve(data);
+                });
+                return d.promise;
+            },
             saveCategory: function (params) {
                 var d = $q.defer();
-                $http.post('/api/category', params).then(function (data) {
+                var url = params._id ? '/api/category/' + params._id : '/api/category';
+                $http.post(url, params).then(function (data) {
                     d.resolve(data);
                 });
                 return d.promise;
