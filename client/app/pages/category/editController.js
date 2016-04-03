@@ -23,11 +23,12 @@
         };
 
         var initialize = function () {
-            if ($routeParams.categoryId) {
+            if ($routeParams.categoryId > 0) {
                 todoService.getCategory($routeParams.categoryId).then(function (result) {
-                    vm._id = result._id;
-                    vm.label = result.label;
-                    vm.description = result.description;
+                    var data = result.data;
+                    vm._id = data._id;
+                    vm.label = data.label;
+                    vm.description = data.description;
                     vm.owner = 1;
                 });
             }

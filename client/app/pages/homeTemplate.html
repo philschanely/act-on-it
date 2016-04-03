@@ -1,10 +1,10 @@
 <h1>Act On It</h1>
-<main class="container">
+<div class="row">
     <section class="app-organization col-md-2 organization">
-        <a href="/#/category/edit/0" class="add-category btn btn-succes">+ Add category</a>
+        <a href="/#/category/edit/0" class="add-category btn btn-success">+ Add category</a>
         <ul class="categories list-unstyled">
             <li class="category" ng-repeat="category in vm.categories">
-                <h2><a href="/category/edit/{{ category._id }}">{{ category.label }}</a></h2>
+                <h2><a href="/#/category/edit/{{ category._id }}">{{ category.label }}</a></h2>
                 <ul class="list-unstyled">
                     <li>Project name</li>
                     <li>Project name</li>
@@ -15,6 +15,6 @@
         </ul>
     </section>
     <section class="col-md-10">
-        
+
     </section>
-</main>
+</div>
