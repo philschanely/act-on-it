@@ -1,4 +1,19 @@
-<h1>Categories</h1>
-<ul>
-    <li ng-repeat="category in vm.categories">{{ category.label }}</li>
-</ul>
+<h1>Act On It</h1>
+<main class="container">
+    <section class="app-organization col-md-2 organization">
+        <ul class="categories list-unstyled">
+            <li class="category" ng-repeat="category in vm.categories">
+                <h2>{{ category.label }}</h2>
+                <ul class="list-unstyled">
+                    <li>Project name</li>
+                    <li>Project name</li>
+                    <li>Project name</li>
+                    <li>Project name</li>
+                </ul>
+            </li>
+        </ul>
+    </section>
+    <section class="col-md-10">
+        
+    </section>
+</main>
