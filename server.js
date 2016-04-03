@@ -14,6 +14,7 @@ server.register([
     if (err) {
         console.log(err);
     } else {
+        // set up templates
         server.views({
             engines: {
                 html: require('handlebars')
@@ -22,13 +23,15 @@ server.register([
             path: './templates'
         });
 
+        // set up routes for client
         server.route({
-                method: 'GET',
-                path: '/',
-                handler: {
-                    view: 'index'
-                }
-            });
+            method: 'GET',
+            path: '/',
+            handler: {
+                view: 'index'
+            }
+        });
+
         server.route({
             method: 'GET',
             path: '/{param*}',
@@ -39,6 +42,7 @@ server.register([
             }
         });
 
+        // start server
         server.start(function () {
             console.log('Server running');
         });
