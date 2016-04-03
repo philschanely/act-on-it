@@ -4,11 +4,11 @@
     angular.module('todo').controller('homeController', function (todoService) {
         var vm = this;
         
-        vm.lists = [];
+        vm.categories = [];
         
         var initialize = function () {
-            todoService.getLists().then(function (result) {
-                vm.lists = result.data;
+            todoService.getCategories().then(function (result) {
+                vm.categories = result.data;
             });
         };
         

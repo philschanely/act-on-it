@@ -1,27 +1,46 @@
+'use strict';
+
 var Hapi = require('hapi'),
-    Routes = require('./routes');
+    server = new Hapi.Server();
 
-require('./database');
+server.connection({ host: '127.0.0.1', port: 8080, labels: ['api'] });
 
-var server = new Hapi.Server();
+server.register([
+    {
+        register: require('./category'),
+        options: {}
+    }, require('vision'), require('inert')
+], function (err) {
+    if (err) {
+        console.log(err);
+    } else {
+        server.views({
+            engines: {
+                html: require('handlebars')
+            },
+            relativeTo: __dirname,
+            path: './templates'
+        });
 
-server.register([require('vision'), require('inert')], function (err) {
-    server.views({
-        engines: {
-            html: require('handlebars')
-        },
-        relativeTo: __dirname,
-        path: './templates'
-    });
-});
+        server.route({
+                method: 'GET',
+                path: '/',
+                handler: {
+                    view: 'index'
+                }
+            });
+        server.route({
+            method: 'GET',
+            path: '/{param*}',
+            handler: {
+                directory: {
+                    path: './client'
+                }
+            }
+        });
 
-server.connection({
-    host: '127.0.0.1',
-    port: 8080
-});
-
-server.route(Routes.endpoints);
-
-server.start(function () {
-    console.log('Server running at: ', server.info.uri);
+        server.start(function () {
+            console.log('Server running');
+        });
+    }
 });

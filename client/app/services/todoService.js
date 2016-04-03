@@ -3,16 +3,16 @@
 
     angular.module('todo').service('todoService', function ($q, $http) {
         return {
-            getLists: function () {
+            getCategories: function () {
                 var d = $q.defer();
-                $http.get('/api/lists').then(function (data) {
+                $http.get('/api/category').then(function (data) {
                     d.resolve(data);
                 });
                 return d.promise;
             },
-            saveList: function (params) {
+            saveCategory: function (params) {
                 var d = $q.defer();
-                $http.post('/api/list', params).then(function (data) {
+                $http.post('/api/category', params).then(function (data) {
                     d.resolve(data);
                 });
                 return d.promise;
