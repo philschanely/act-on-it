@@ -11,6 +11,7 @@
   "dependencies": {
     "bookshelf": "^0.9.3",
     "boom": "^3.1.2",
+    "bower": "^1.7.9",
     "handlebars": "^4.0.5",
     "hapi": "^13.2.1",
     "inert": "^3.2.0",

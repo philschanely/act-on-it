@@ -11,12 +11,12 @@
             .when('/', {
                 controller: 'homeController',
                 controllerAs: 'vm',
-                templateUrl: 'app/pages/homeTemplate.html'
+                templateUrl: 'app/views/home.html'
             })
             .when('/category/edit/:categoryId', {
                 controller: 'categoryEditController',
                 controllerAs: 'vm',
-                templateUrl: 'app/pages/category/editTemplate.html'
+                templateUrl: 'app/views/category/edit.html'
             })
             .otherwise({
                 redirectTo: '/'
