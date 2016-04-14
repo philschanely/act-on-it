@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Act On It - The app for taking action</title>
+
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        
+        <!-- Materialize -->
+        <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+    </head>
+    <body>
+        <section class="masthead">
+            <img class="brand-icon" src="#" />
+            <h1 class="brand-name">Act On It</h1>
+            <p class="brand-tagline">The app for taking action</p>
+        </section>
+        <section class="panel-organization">
+            <button><span class="icon-add">Create a</span> Category</button>
+            <ul class="categories">
+                <li class="category">
+                    <p class="category-header">
+                        <a href="#category:id" class="name">Home Projects</a>
+                        <a href="#category-options:id">
+                            <span class="icon-options">View options</span>
+                        </a>
+                    </p>
+                    <ul class="options">
+                        <li>
+                            <button class="btn-share">
+                                <span class="icon-share">Share</span>
+                            </button>
+                        </li>
+                        <li>
+                            <button class="btn-duplicate">
+                                <span class="icon-duplicate">Duplicate</span>
+                            </button>
+                        </li>
+                        <li>
+                            <button class="btn-add-item">
+                                <span class="icon-add">Create</span> Item
+                            </button>
+                        </li>
+                        <li>
+                            <button class="btn-delete">
+                                <span class="icon-delete">Delete</span>
+                            </button>
+                        </li>
+                    </ul>
+                    <ul class="projects">
+                        <li class="project">
+                            <p>
+                                <a href="/#/project/show/:id" class="name">Lawn maintenance</a>
+                                <a href="#project-options:id">
+                                    <span class="icon-options">View options</span>
+                                </a>  
+                            </p>
+                            <ul class="options">
+                                <li>
+                                    <a href="/#/share_projeact/:id" class="btn-share">
+                                        <span class="icon-share">Share</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <button class="btn-duplicate">
+                                        <span class="icon-duplicate">Duplicate</span>
+                                    </button>
+                                </li>
+                                <li>
+                                    <button class="btn-add-item">
+                                        <span class="icon-add">Create</span> Item
+                                    </button>
+                                </li>
+                                <li>
+                                    <button class="btn-delete">
+                                        <span class="icon-delete">Delete</span>
+                                    </button>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </section>
+        
+        <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+        <!-- Materialize -->
+        <script type="text/javascript" src="js/materialize.min.js"></script>
+    </body>
+</html>

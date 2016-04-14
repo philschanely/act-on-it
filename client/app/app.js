@@ -13,6 +13,11 @@
                 controllerAs: 'vm',
                 templateUrl: 'app/pages/homeTemplate.html'
             })
+            .when('/test', {
+                controller: 'testController',
+                controllerAs: 'vm',
+                templateUrl: 'app/pages/test/testTemplate.html'
+            })
             .when('/category/edit/:categoryId', {
                 controller: 'categoryEditController',
                 controllerAs: 'vm',
