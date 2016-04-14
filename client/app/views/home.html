@@ -6,15 +6,12 @@
             <li class="category" ng-repeat="category in vm.categories">
                 <h2><a href="/#/category/edit/{{ category._id }}">{{ category.label }}</a></h2>
                 <ul class="list-unstyled">
-                    <li>Project name</li>
-                    <li>Project name</li>
-                    <li>Project name</li>
-                    <li>Project name</li>
+                    <li ng-repeat="project in category.projects">{{project.label}}</li>
                 </ul>
             </li>
         </ul>
     </section>
     <section class="col-md-10">
-
+        <p>Tasks coming soon! Not today, but <em>maybe</em> tomorrow.</p>
     </section>
 </div>

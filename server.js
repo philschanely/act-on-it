@@ -3,13 +3,13 @@
 var Hapi = require('hapi'),
     server = new Hapi.Server();
 
-server.connection({ host: '127.0.0.1', port: 8080, labels: ['api'] });
+server.connection({ host: '0.0.0.0', port: 8080, labels: ['api'] });
 
 server.register([
     {
         register: require('./category'),
         options: {}
-    }, require('vision'), require('inert')
+    }, require('vision'), require('inert'), require('./project') 
 ], function (err) {
     if (err) {
         console.log(err);
@@ -20,7 +20,7 @@ server.register([
                 html: require('handlebars')
             },
             relativeTo: __dirname,
-            path: './templates'
+            path: './client/app/views/'
         });
 
         // set up routes for client

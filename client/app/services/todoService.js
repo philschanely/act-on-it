@@ -24,7 +24,15 @@
                     d.resolve(data);
                 });
                 return d.promise;
-            }
+            },
+            getCategoryProjects: function (_id) {
+                var d = $q.defer();
+                $http.get('/api/project/in_category/' + _id).then(function (data) {
+                    d.resolve(data);
+                });
+                return d.promise;
+            },
+            
         };
     });
 })();
