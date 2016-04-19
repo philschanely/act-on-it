@@ -7,8 +7,6 @@ exports.register = function (server, options, next) {
         method: 'GET',
         path: '/api/project',
         handler: function (request, reply) {
-            console.log("Called project via GET.");
-            console.log(request.params);
             /*
             new Category().fetchAll().then(function (data) {
                 reply(data);
@@ -23,9 +21,9 @@ exports.register = function (server, options, next) {
         method: 'GET',
         path: '/api/project/in_category/{categoryId}',
         handler: function (request, reply) {
-            console.log("Called project for category via GET.");
-            new Project().query({ 
-                    where: {"category": request.params.categoryId }
+            new Project()
+            .query({ 
+                where: {"category": request.params.categoryId }
             }).fetchAll().then(function (data) {
                 reply(data);
             }).catch(function (err) {

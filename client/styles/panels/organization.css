@@ -1,0 +1,83 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,300,100,100italic,300italic,400italic,700,700italic);
+@import url(https://fonts.googleapis.com/css?family=Roboto+Condensed:200,300,400,700);
+.btn-add-category {
+  background-color: #00e5ff;
+  margin-bottom: 20px;
+  display: block;
+  width: auto;
+  box-sizing: border-box;
+  height: 40px;
+  padding: 0px 20px;
+  border-radius: 20px;
+  border: none;
+  text-transform: uppercase;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  transition: 0.2s ease-in-out all;
+  outline: 0px;
+}
+.btn-add-category:hover {
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+.categories li {
+  font-size: 1em;
+  line-height: 1em;
+}
+.category {
+  margin-bottom: 15px;
+}
+.category .category-header {
+  font-size: 2.1em;
+  font-weight: 300;
+  font-family: 'Roboto Condensed', sans-serif;
+  position: relative;
+  color: white;
+  line-height: 1.42857143em;
+  margin-bottom: 5px;
+  transition: all 0.1s linear;
+}
+.category .category-header .name {
+  color: inherit;
+  display: block;
+  padding: 0 10px;
+}
+.category .category-header:hover {
+  background-color: #757575;
+}
+.link-options {
+  position: absolute;
+  right: 10px;
+  top: 5px;
+}
+.link-options .icon-options {
+  display: block;
+  width: 20px;
+  height: 20px;
+  border-radius: 10px;
+  background-color: white;
+  text-indent: -9999px;
+  overflow: hidden;
+}
+.panel-organization {
+  padding: 30px 10px;
+}
+.project .project-header {
+  font-size: 1.4em;
+  font-weight: 100;
+  font-family: inherit;
+  line-height: 1.42857143em;
+  position: relative;
+  color: white;
+  margin-bottom: 0px;
+  transition: all 0.1s linear;
+}
+.project .project-header .name {
+  display: block;
+  padding: 5px 10px 5px 30px;
+  color: inherit;
+  width: 100%;
+  height: 30px;
+  box-sizing: border-box;
+}
+.project .project-header:hover {
+  background-color: #757575;
+}

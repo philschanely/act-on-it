@@ -28,4 +28,10 @@
             });
     })
     .value('$', window.$);
+    
 })();
+
+function changeSelected($obj) {
+    $('.selected').removeClass('selected');
+    $obj.addClass('selected');
+}

@@ -1,0 +1,43 @@
+// Imports =====================================================================
+@import "reset.less";
+@import "variables.less";
+@import "mixins.less";
+
+
+// ==========  STYLES ==========================================================
+a, a:visited { text-decoration: none; color:@color-cyan; }
+
+body {
+    .font-family-roboto;
+    font-size:62.5%;
+    width:1500px;
+    margin:0 auto; 
+    height:100%;
+    color:@color-grey-dark;
+    .clearfix;
+} 
+
+.home-left-panel { 
+    .col(300px); height: 100%; 
+    background-color: @color-grey-dark;
+}
+
+.home-right-panel { 
+    .col(1200px); height:100%; 
+    background-color: white;
+    position: relative;
+}
+
+html { 
+    background-color: @color-grey-middark; 
+    height:100%;
+}
+
+li { 
+    font-size:1.4em; 
+    li, p { font-size:1em; }
+}
+
+ng-view { height: 100%; display:block; }
+
+p { font-size:1.4em; line-height:1.43em; }

@@ -1,0 +1,44 @@
+// Mixins ======================================================================
+.bbox() { box-sizing: border-box; }
+.btn() {
+    display: block;
+    width:auto;
+    .round-btn(40px);
+    outline:0px;
+}
+.center(@width:auto) {
+    width:@width;
+    margin-left:auto;
+    margin-right:auto;
+}
+.circle-btn(@size:30px) {
+   .round-btn(@size);
+   width:@size;
+}
+.clearfix() {
+    &:after { content:""; display:block; clear:both; }
+}
+.col(@width:auto) {
+    width:@width;
+    float:left;
+    .bbox;
+}
+.font(@size, @weight:inherit, @family:inherit) {
+    font-size:@size;
+    font-weight:@weight;
+    font-family: @family;
+}
+.material-height(@height:1) {
+    box-shadow: 0 @height*1px @height*2px rgba(0,0,0,0.2);
+}
+.round-btn(@size:30px, @height:1) {
+    .bbox;
+    height:@size;
+    padding:0px @size/2;
+    border-radius:@size/2;
+    border:none;
+    text-transform: uppercase;
+    .material-height(@height);
+    transition: 0.2s ease-in-out all;
+    &:hover { .material-height(@height+4); }
+}

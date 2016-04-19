@@ -1,0 +1,25 @@
+@import "../variables.less";
+@import "../mixins.less"; 
+
+.brand {
+    color:white;
+    background-color:@color-cyan;
+    height:80px;
+    .brand-name {
+        .font(3.7em, 300, @font-roboto-condensed);
+        color:@color-grey-dark;
+        float:left;
+        margin-top:22px;
+    }
+    .brand-tagline { display: none; }
+    .icon-aoi-checkbox { 
+        display: block; 
+        width:20px; height:20px;
+        margin: 10px; 
+        float:left;
+        background-color: white;
+    }
+    .clearfix;
+} 
+
+li { font-size:1em; }

@@ -1,0 +1,26 @@
+@import "../variables.less";
+@import "../mixins.less";  
+
+.panel-snackbar {
+    position:absolute;
+    bottom:20px;
+    left:50%;
+    width:400px;
+    margin-left:-200px;
+    background-color:@color-grey-middark;
+    color:white; 
+    .material-height(4);
+    p { 
+        padding:10px 20px; .col(); 
+    }
+    .action-btn {
+        .col();
+        float:right;
+        font-size:1.4em;
+        line-height:2/1.4em;
+        color:@color-cyan;
+        text-transform: uppercase;
+        padding:10px 20px;
+    }
+    .clearfix; 
+}

@@ -1,0 +1,64 @@
+@import "../variables.less";
+@import "../mixins.less";  
+
+.btn-add-category {
+    background-color: @color-cyan;
+    margin-bottom:20px;
+    .btn();
+}
+
+.categories { 
+    li { font-size:1em;  line-height:1em; } 
+}
+
+.category {
+    margin-bottom:15px;
+    .category-header {
+        .font(2.1em, 300, @font-roboto-condensed);
+        position: relative;
+        color:white; line-height:3/2.1em;
+        margin-bottom:5px; 
+        transition:all 0.1s linear;
+        .name { 
+            color:inherit; display: block;
+            padding:0 10px; 
+        }
+        &:hover { background-color: @color-grey-middark; }
+    }
+}
+
+.link-options { 
+    position:absolute;
+    right:10px; top:5px;
+    .icon-options {
+        display:block;
+        width:20px; height:20px; 
+        border-radius:10px; 
+        background-color: white; 
+        text-indent: -9999px; overflow: hidden;
+    }
+}
+
+.panel-organization {
+    padding:30px 10px;
+}
+
+.project {
+    
+    .project-header {
+        .font(1.4em, 100); line-height:2/1.4em; 
+        position: relative;
+        color:white;
+        margin-bottom:0px;
+        transition:all 0.1s linear;
+        .name { 
+            display:block;
+            padding:5px 10px 5px 30px; 
+            color:inherit;
+            width:100%;
+            height:30px;
+            .bbox;
+        }
+        &:hover { background-color: @color-grey-middark; }
+    }
+}

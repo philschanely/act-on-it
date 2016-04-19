@@ -1,17 +1,63 @@
-<h1>Act On It</h1>
-<div class="row">
-    <section class="app-organization col-md-2 organization">
-        <a href="/#/category/edit/0" class="add-category btn btn-success">+ Add category</a>
-        <ul class="categories list-unstyled">
+<div class="home-left-panel">
+    <section class="masthead brand">
+        <span class="icon-aoi-checkbox"></span>
+        <h1 class="brand-name">Act On It</h1>
+        <p class="brand-tagline">The app for taking action</p>
+    </section>
+    <section class="panel-organization">
+        <button class="btn-add-category"><span class="icon-add">Create a</span> Category</button>
+        <!-- <a href="/#/category/edit/0" class="add-category btn btn-success">+ category</a> -->
+        <ul class="categories">
+            <li class="category">
+                <p class="category-header">
+                    <a href="/#/category/all" class="name" 
+                       ng-click="vm.loadCategory('all', $event)">
+                        All Action Items
+                    </a>
+                </p>
+            </li>
             <li class="category" ng-repeat="category in vm.categories">
-                <h2><a href="/#/category/edit/{{ category._id }}">{{ category.label }}</a></h2>
-                <ul class="list-unstyled">
-                    <li ng-repeat="project in category.projects">{{project.label}}</li>
+                <p class="category-header">
+                    <a href="/#/category/{{ category._id }}" class="name" 
+                       ng-click="vm.loadCategory(category._id, $event)">
+                        {{category.label}}
+                    </a>
+                    <a class="link-options" href="/#/category/options/{{ category._id }}">
+                        <span class="icon-options">View options</span>
+                    </a>
+                </p>
+                <ul class="projects">
+                    <li class="project" ng-repeat="project in category.projects">
+                        <p class="project-header">
+                            <a href="/#/project/{{project._id}}" class="name"
+                               ng-click="vm.loadProject(project._id, $event)">
+                                {{project.label}}
+                            </a>
+                            <a class="link-options" href="/#/project/options/{{project._id}}">
+                                <span class="icon-options">View options</span>
+                            </a>  
+                        </p>
+                    </li>
                 </ul>
             </li>
         </ul>
     </section>
-    <section class="col-md-10">
-        <p>Tasks coming soon! Not today, but <em>maybe</em> tomorrow.</p>
+</div>
+<div class="home-right-panel">
+    <section class="panel-task-options"></section>
+    <section class="panel-tasks">
+        <ul>
+            <li ng-repeat="task in vm.tasks" ng-click="vm.editTask(task._id)">
+                <input type="checkbox" class="task-complete-box" />
+                <p class="task-deadline">{{task.date_due}}</p>
+                <div class="task-body">
+                    <p>{{task.body}}</p>
+                </div>
+            </li>
+        </ul>
+    </section>
+    <section class="panel-snackbar">
+        <p>{{vm.taskMsg}}</p>
+        <a href="/#/" class="action-btn">Dismiss</a>
     </section>
 </div>
