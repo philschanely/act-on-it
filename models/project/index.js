@@ -36,13 +36,13 @@ exports.register = function (server, options, next) {
         method: 'GET',
         path: '/api/project/{projectId}',
         handler: function (request, reply) {
-            /*
-            new Category({'_id': request.params.projectId}).fetch().then(function (data) {
+            new Project({'_id': request.params.projectId})
+            .fetch()
+            .then(function (data) {
                 reply(data);
             }).catch(function (err) {
                 reply(err);
             });
-            */
         }
     });
 
