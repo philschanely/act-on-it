@@ -31,7 +31,7 @@
   font-family: 'Roboto Condensed', sans-serif;
   position: relative;
   color: white;
-  line-height: 1.42857143em;
+  line-height: 1.4285714285714286em;
   margin-bottom: 5px;
   transition: all 0.1s linear;
 }
@@ -64,7 +64,7 @@
   font-size: 1.4em;
   font-weight: 100;
   font-family: inherit;
-  line-height: 1.42857143em;
+  line-height: 1.4285714285714286em;
   position: relative;
   color: white;
   margin-bottom: 0px;

@@ -47,7 +47,9 @@
     <section class="panel-task-options"></section>
     <section class="panel-tasks">
         <ul>
-            <li ng-repeat="task in vm.tasks" ng-click="vm.editTask(task._id)">
+            <li class="task type-{{task.type}}" 
+                ng-repeat="task in vm.tasks" 
+                ng-click="vm.editTask(task._id)">
                 <input type="checkbox" class="task-complete-box" />
                 <p class="task-deadline">{{task.date_due}}</p>
                 <div class="task-body">

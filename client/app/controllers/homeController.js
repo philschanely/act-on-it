@@ -16,6 +16,9 @@
                     });
                 });
             });
+            todoService.getTasks().then(function (result) {
+                vm.tasks = result.data;
+            });
         };
         
         vm.loadCategory = function (categoryId, e) {

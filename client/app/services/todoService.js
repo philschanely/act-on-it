@@ -32,7 +32,13 @@
                 });
                 return d.promise;
             },
-            
+            getTasks: function (params) {
+                var d = $q.defer();
+                $http.get('/api/tasks').then(function (data) {
+                    d.resolve(data);
+                });
+                return d.promise;
+            }
         };
     });
 })();
