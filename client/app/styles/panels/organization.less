@@ -29,7 +29,23 @@
         }
         &.selected {
             background-color: @color-grey-middark;  
-        }
+        } 
+    }
+}
+
+.category-editor {
+    .category-label {
+        .font(1em, 100, @font-roboto-condensed);
+        border:none; border-bottom:1px solid white;
+        background-color: transparent; color:white;
+        padding:0 10px; .col(200px); outline:none;
+    }
+    .btn-save-category { 
+        .flat-btn; 
+        .font(1em, 300);
+        .col(50px);
+        position: relative;
+        top: -5px;
     }
 }
 

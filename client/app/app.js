@@ -33,7 +33,9 @@
 
 function changeSelected($obj) {
     $('.selected').removeClass('selected');
-    $obj.addClass('selected');
+    if ($obj) {
+        $obj.addClass('selected');
+    }
 }
 
 function sendToSnackbar(_msg, _class, _options) {

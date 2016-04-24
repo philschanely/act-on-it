@@ -4,7 +4,6 @@
     display: block;
     width:auto;
     .round-btn(@height);
-    outline:0px;
 }
 .center(@width:auto) {
     width:@width;
@@ -28,15 +27,27 @@
     font-weight:@weight;
     font-family: @family;
 }
+.flat-btn(@color:@color-cyan) {
+    color:@color;
+    text-transform: uppercase;
+    padding:10px 20px;
+    border:none;
+    outline:0;
+    background-color: transparent;
+    display: block;
+    cursor:pointer;
+}
 .material-height(@height:1) {
     box-shadow: 0 @height*1px @height*2px rgba(0,0,0,0.2);
 }
 .round-btn(@size:30px, @height:1) {
     .bbox;
+    outline:none;
     height:@size;
     padding:0px @size/2;
     border-radius:@size/2;
     border:none;
+    cursor:pointer;
     text-transform: uppercase;
     .material-height(@height);
     transition: 0.2s ease-in-out all;

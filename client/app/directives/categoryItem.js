@@ -24,6 +24,12 @@
                     $scope.id = $scope.category.id;
                     $scope.owner = $scope.category.owner; 
                     $scope.editing = $scope.category.editing ? $scope.category.editing : false;
+                    $scope.selected = false;
+                    if ($scope.editing) {
+                        changeSelected();
+                        $scope.selected = true;
+                    }
+                    console.log($scope.selected);
                 };
                 $scope.save = function (e) {
                     console.log(e);
@@ -43,8 +49,9 @@
                     if ($(e.target).closest(".category-header").hasClass("selected")) {
                         $scope.edit(id);
                     } else {
-                        changeSelected($(e.target).closest(".category-header"));
+                        changeSelected();
                     }
+                    $scope.selected = true;
                 }
                 $scope.cancelEdit = function() {
                     $scope.editing = false;
