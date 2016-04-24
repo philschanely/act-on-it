@@ -1,0 +1,414 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,300,100,100italic,300italic,400italic,700,700italic);
+@import url(https://fonts.googleapis.com/css?family=Roboto+Condensed:200,300,400,700);
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+.brand {
+  color: white;
+  background-color: #00e5ff;
+  height: 80px;
+}
+.brand .brand-name {
+  font-size: 3.7em;
+  font-weight: 300;
+  font-family: 'Roboto Condensed', sans-serif;
+  color: #424242;
+  float: left;
+  margin-top: 22px;
+}
+.brand .brand-tagline {
+  display: none;
+}
+.brand .icon-aoi-checkbox {
+  display: block;
+  width: 20px;
+  height: 20px;
+  margin: 10px;
+  float: left;
+  background-color: white;
+  position: relative;
+}
+.brand:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+li {
+  font-size: 1em;
+}
+.btn-add-category {
+  background-color: #00e5ff;
+  margin-bottom: 20px;
+  display: block;
+  width: auto;
+  box-sizing: border-box;
+  height: 40px;
+  padding: 0px 20px;
+  border-radius: 20px;
+  border: none;
+  text-transform: uppercase;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  transition: 0.2s ease-in-out all;
+  outline: 0px;
+}
+.btn-add-category:hover {
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+.categories li {
+  font-size: 1em;
+  line-height: 1em;
+}
+.category {
+  margin-bottom: 15px;
+}
+.category .category-header {
+  font-size: 2.1em;
+  font-weight: 300;
+  font-family: 'Roboto Condensed', sans-serif;
+  position: relative;
+  color: white;
+  line-height: 1.4285714285714286em;
+  margin-bottom: 5px;
+  transition: all 0.1s linear;
+}
+.category .category-header .name {
+  color: inherit;
+  display: block;
+  padding: 0 10px;
+}
+.category .category-header:hover {
+  background-color: #757575;
+}
+.category .category-header:hover .link-options {
+  opacity: 1;
+}
+.link-options {
+  position: absolute;
+  opacity: 0;
+  right: 10px;
+  top: 5px;
+  transition: 0.2s opacity linear;
+}
+.link-options .icon-options {
+  display: block;
+  width: 20px;
+  height: 20px;
+  border-radius: 10px;
+  background-color: white;
+  text-indent: -9999px;
+  overflow: hidden;
+}
+.panel-organization {
+  padding: 30px 10px;
+}
+.project .project-header {
+  font-size: 1.4em;
+  font-weight: 100;
+  font-family: inherit;
+  line-height: 1.4285714285714286em;
+  position: relative;
+  color: white;
+  margin-bottom: 0px;
+  transition: all 0.1s linear;
+}
+.project .project-header .name {
+  display: block;
+  padding: 5px 10px 5px 30px;
+  color: inherit;
+  width: 100%;
+  height: 30px;
+  box-sizing: border-box;
+}
+.project .project-header:hover {
+  background-color: #757575;
+}
+.project .project-header:hover .link-options {
+  opacity: 1;
+}
+.task {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  width: 300px;
+  float: left;
+  box-sizing: border-box;
+  height: 180px;
+  margin: 20px 10px;
+  padding: 10px;
+}
+.task .task-complete-box {
+  width: 20px;
+  float: left;
+  box-sizing: border-box;
+  height: 20px;
+  margin: 0 10px 10px 0;
+}
+.task .task-deadline {
+  width: auto;
+  float: left;
+  box-sizing: border-box;
+}
+.task .task-deadline .data-label {
+  font-weight: 400;
+}
+.task .task-deadline .data-value {
+  font-weight: 100;
+}
+.task .task-body {
+  clear: both;
+  margin-left: 30px;
+  font-weight: 100;
+}
+.task.type-1 {
+  background-color: #00e5ff;
+}
+.task.type-2 {
+  background-color: #ffc400;
+}
+.task.type-3 {
+  background-color: #e0e0e0;
+}
+.panel-snackbar {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  width: 400px;
+  margin-left: -200px;
+  background-color: #757575;
+  color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+.panel-snackbar p {
+  padding: 10px 20px;
+  width: auto;
+  float: left;
+  box-sizing: border-box;
+}
+.panel-snackbar .action-btn {
+  width: auto;
+  float: left;
+  box-sizing: border-box;
+  float: right;
+  font-size: 1.4em;
+  line-height: 1.4285714285714286em;
+  color: #00e5ff;
+  text-transform: uppercase;
+  padding: 10px 20px;
+}
+.panel-snackbar:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+a,
+a:visited {
+  text-decoration: none;
+  color: #00e5ff;
+}
+body {
+  font-family: 'Roboto', sans-serif;
+  font-size: 62.5%;
+  width: 1500px;
+  margin: 0 auto;
+  height: 100%;
+  color: #424242;
+}
+body:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+.btn-add-item {
+  background-color: #00e676;
+  color: #424242;
+  position: absolute;
+  right: 10px;
+  bottom: 20px;
+  box-sizing: border-box;
+  height: 30px;
+  padding: 0px 15px;
+  border-radius: 15px;
+  border: none;
+  text-transform: uppercase;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  transition: 0.2s ease-in-out all;
+  width: 30px;
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.2);
+}
+.btn-add-item:hover {
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+.btn-add-item.main-fab {
+  box-sizing: border-box;
+  height: 50px;
+  padding: 0px 25px;
+  border-radius: 25px;
+  border: none;
+  text-transform: uppercase;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  transition: 0.2s ease-in-out all;
+  width: auto;
+  font-size: 1.4em;
+  font-weight: 300;
+  font-family: inherit;
+}
+.btn-add-item.main-fab:hover {
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+.home-left-panel {
+  width: 300px;
+  float: left;
+  box-sizing: border-box;
+  height: 100%;
+  background-color: #424242;
+}
+.home-right-panel {
+  width: 1200px;
+  float: left;
+  box-sizing: border-box;
+  height: 100%;
+  background-color: white;
+  position: relative;
+}
+html {
+  background-color: #757575;
+  height: 100%;
+}
+li {
+  font-size: 1.4em;
+}
+li li,
+li p {
+  font-size: 1em;
+}
+ng-view {
+  height: 100%;
+  display: block;
+}
+p {
+  font-size: 1.4em;
+  line-height: 1.43em;
+}

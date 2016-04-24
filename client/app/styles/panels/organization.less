@@ -23,13 +23,17 @@
             color:inherit; display: block;
             padding:0 10px; 
         }
-        &:hover { background-color: @color-grey-middark; }
+        &:hover { 
+            background-color: @color-grey-middark; 
+            .link-options { opacity: 1; }
+        }
     }
 }
 
 .link-options { 
-    position:absolute;
+    position:absolute; opacity: 0;
     right:10px; top:5px;
+    transition: 0.2s opacity linear;
     .icon-options {
         display:block;
         width:20px; height:20px; 
@@ -44,7 +48,6 @@
 }
 
 .project {
-    
     .project-header {
         .font(1.4em, 100); line-height:2/1.4em; 
         position: relative;
@@ -59,6 +62,9 @@
             height:30px;
             .bbox;
         }
-        &:hover { background-color: @color-grey-middark; }
+        &:hover { 
+            background-color: @color-grey-middark; 
+            .link-options { opacity:1; }
+        }
     }
 }

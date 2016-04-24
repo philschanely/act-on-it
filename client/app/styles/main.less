@@ -1,13 +1,18 @@
-// Imports =====================================================================
+// ========== IMPORTS ==========================================================
 @import "reset.less";
 @import "variables.less";
 @import "mixins.less";
+@import "panels/brand.less";
+@import "panels/organization.less";
+@import "panels/task-editor.less";
+@import "panels/task-options.less";
+@import "panels/tasks.less"; 
+@import "panels/snackbar.less"; 
 
-
-// ==========  STYLES ==========================================================
+// ========== STYLES ===========================================================
 a, a:visited { text-decoration: none; color:@color-cyan; }
 
-body {
+body { 
     .font-family-roboto;
     font-size:62.5%;
     width:1500px;
@@ -16,6 +21,17 @@ body {
     color:@color-grey-dark;
     .clearfix;
 } 
+
+.btn-add-item {
+    background-color: @color-green; color:@color-grey-dark;
+    position: absolute; right:10px; bottom:20px;
+    .circle-btn(30px);
+    .material-height(16);
+    &.main-fab { 
+        .round-btn(50px); width:auto; 
+        .font(1.4em, 300);
+    }
+}
 
 .home-left-panel { 
     .col(300px); height: 100%; 

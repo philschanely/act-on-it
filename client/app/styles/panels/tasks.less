@@ -14,12 +14,13 @@
     }
     .task-deadline {
         .col();
-        font-size:1.4em;
+        .data-label { font-weight:400; }
+        .data-value { font-weight:100; }
     }
     .task-body {
         clear:both;
         margin-left:30px;
-        p { .font(1.4em, 100); }
+        font-weight:100;
     }
     &.type-1 { background-color:@color-cyan; }
     &.type-2 { background-color:@color-orange; }

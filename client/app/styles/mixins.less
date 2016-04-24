@@ -1,9 +1,9 @@
 // Mixins ======================================================================
 .bbox() { box-sizing: border-box; }
-.btn() {
+.btn(@height:40px) {
     display: block;
     width:auto;
-    .round-btn(40px);
+    .round-btn(@height);
     outline:0px;
 }
 .center(@width:auto) {
