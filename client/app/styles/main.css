@@ -207,6 +207,9 @@ li {
 .category .category-header:hover .link-options {
   opacity: 1;
 }
+.category .category-header.selected {
+  background-color: #757575;
+}
 .link-options {
   position: absolute;
   opacity: 0;
@@ -249,6 +252,9 @@ li {
 }
 .project .project-header:hover .link-options {
   opacity: 1;
+}
+.project .project-header.selected {
+  background-color: #757575;
 }
 .task {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);

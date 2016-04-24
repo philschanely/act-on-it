@@ -37,7 +37,7 @@
         vm.loadProject = function (projectId, e) {
             e.preventDefault();
             var $o = $(e.target),
-                $project = $o.closest('.project');
+                $project = $o.closest('.project-header');
             changeSelected($project);
             vm.taskMsg = "Loading project ..." + projectId.toString();
             todoService.getProject(projectId).then(function (result) {

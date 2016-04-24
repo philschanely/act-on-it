@@ -18,8 +18,7 @@
                         $scope.cancelEdit();
                     }
                 };
-                $scope.edit = function(categoryId, e) {
-                    e.preventDefault();
+                $scope.edit = function(id) {
                     $scope.editing = true;
                     console.log("Trying to edit category");
                 };
@@ -40,6 +39,15 @@
                         $scope.label = result.data.label;
                     });
                 };
+                $scope.select = function(id, e) {
+                    e.preventDefault();
+                    console.log($(e.target));
+                    if ($(e.target).closest(".category-header").hasClass("selected")) {
+                        $scope.edit(id);
+                    } else {
+                        changeSelected($(e.target).closest(".category-header"));
+                    }
+                }
                 $scope.cancelEdit = function() {
                     $scope.editing = false;
                 };
