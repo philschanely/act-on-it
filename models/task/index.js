@@ -1,14 +1,13 @@
 'use strict';
 
-var Task = require('./model').Project;
+var Task = require('./model').Task;
 
 exports.register = function (server, options, next) {
     server.route({
         method: 'GET',
         path: '/api/tasks',
         handler: function (request, reply) {
-            console.log('Calling for all tasks');
-            new Task().fetchAll().then(function (data) {
+            new Task().query({ orderBy: 'date_due' }).fetchAll().then(function (data) {
                 reply(data);
             }).catch(function (err) {
                 reply(err);
@@ -21,8 +20,8 @@ exports.register = function (server, options, next) {
         path: '/api/tasks/in_category/{categoryId}',
         handler: function (request, reply) {
             new Task()
-            .query({ 
-                where: {"category": request.params.categoryId }
+            .where({
+                category: request.params.categoryId 
             }).fetchAll().then(function (data) {
                 reply(data);
             }).catch(function (err) {

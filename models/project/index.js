@@ -36,11 +36,17 @@ exports.register = function (server, options, next) {
         method: 'GET',
         path: '/api/project/{projectId}',
         handler: function (request, reply) {
-            new Project({'_id': request.params.projectId})
-            .fetch()
-            .then(function (data) {
+            new Project()
+            .where({ id: request.params.projectId })
+            .fetch({ withRelated: [{
+                    tasks: function(qb) {
+                         qb.orderBy("date_due");
+                     }
+                }]
+            }).then(function (data) {
                 reply(data);
             }).catch(function (err) {
+                console.log(err);
                 reply(err);
             });
         }
