@@ -6,6 +6,18 @@
         
         vm.categories = [];
         vm.taskMsg = "No message yet.";
+        vm.newTask = { 
+            editing: false, 
+            id:null, 
+            body:"", 
+            date_due:"", 
+            status:"0",
+            type:"1",
+            edit: function () {
+                alert();
+            }
+        };
+        vm.activeTask = null;
         
         var initialize = function () {
             todoService.getCategories().then(function (result) {
@@ -55,6 +67,16 @@
                 editing:true
             }
             vm.categories.push(category);
+        };
+        
+        vm.newTask = function(e){
+            console.log("Trying to create a new task.");
+            vm.activeTask = vm.newTask;
+            //vm.activeTask.edit();
+        };
+        
+        vm.editTask = function(e){
+            console.log("Trying to edit a task.");
         };
         
         initialize();

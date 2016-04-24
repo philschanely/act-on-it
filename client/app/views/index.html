@@ -7,16 +7,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     
     <!--App modules styls-->
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="bower_components/bootstrap-additions/dist/bootstrap-additions.min.css" />
+    <link rel="stylesheet" href="bower_components/angular-motion/dist/angular-motion.min.css" />
+    
     <link type="text/css" rel="stylesheet" href="app/styles/main.css" />
     
 </head>
-<body ng-app="todo" class="container">
+<body ng-app="todo">
     <ng-view></ng-view>
     
     <script type="text/javascript" src="bower_components/jquery/dist/jquery.js"></script>
     <script type="text/javascript" src="bower_components/angular/angular.js"></script>
     <script type="text/javascript" src="bower_components/angular-route/angular-route.js"></script>
     <script type="text/javascript" src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+    <script type="text/javascript" src="bower_components/angular-strap/dist/angular-strap.min.js"></script>
+    <script type="text/javascript" src="bower_components/angular-strap/dist/angular-strap.tpl.min.js"></script>
+    
     <script type="text/javascript" src="bower_components/Materialize/dist/js/materialize.min.js"></script>
     
     <script type="text/javascript" src="app/app.js"></script>
@@ -24,11 +31,10 @@
     <script type="text/javascript" src="app/controllers/homeController.js"></script>
     
     <script type="text/javascript" src="app/directives/brand.js"></script>
-    <script type="text/javascript" src="app/directives/categoryEdit.js"></script>
     <script type="text/javascript" src="app/directives/categoryItem.js"></script>
     <script type="text/javascript" src="app/directives/categoryList.js"></script>
-    <script type="text/javascript" src="app/directives/projectEdit.js"></script>
     <script type="text/javascript" src="app/directives/projectItem.js"></script>
     <script type="text/javascript" src="app/directives/projectList.js"></script>
+    <script type="text/javascript" src="app/directives/taskEditor.js"></script>
 </body>
 </html>

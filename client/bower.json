@@ -24,6 +24,9 @@
     "angular-sanitize": "^1.5.2",
     "angular-route": "^1.5.2",
     "bootstrap": "^3.3.6",
-    "Materialize": "materialize#^0.97.6"
+    "Materialize": "materialize#^0.97.6",
+    "angular-strap": "^2.3.8",
+    "angular-motion": "^0.4.4",
+    "bootstrap-additions": "^0.3.1"
   }
 }

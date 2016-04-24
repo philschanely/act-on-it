@@ -6,7 +6,12 @@
     </section>
 </div>
 <div class="home-right-panel">
-    <button class="main-fab btn-add-item"><span class="icon-add">+</span> Item</button>
+    <button class="main-fab btn-add-item"
+            data-animation="am-fade-and-slide-top" 
+            data-template-url="app/views/task/edit.html" 
+            bs-modal>
+        <span class="icon-add">+</span> Item
+    </button>
     <section class="panel-task-options"></section>
     <section class="panel-tasks">
         <ul>

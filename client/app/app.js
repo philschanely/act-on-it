@@ -3,7 +3,8 @@
 
     var app = angular.module('todo', [
         'ngSanitize',
-        'ngRoute'
+        'ngRoute',
+        'mgcrea.ngStrap'
     ]);
 
     app.config(function ($routeProvider) {

@@ -1,0 +1,39 @@
+<div class="modal panel-task-editor" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form ng-submit="saveTask($event)">
+                <input type="checkbox" ng-model="status" />
+                <ul class="task-data">
+                    <li>
+                        <label for="">Status</label>
+                        <input type="checkbox" ng-model="status" />
+                    </li>
+                    <li>
+                        <label for="">Due:</label>
+                        <input type="text" ng-model="date_due" />
+                    </li>
+                    <li>
+                        <label for=""></label>
+                        <input type="text" ng-model="body" />
+                    </li>
+                </ul>
+                <div class="task-options">
+                    <ul>
+                        <li>Delete</li>
+                        <li>Clone</li>
+                        <li>Share</li>
+                        <li>
+                            <label>Type:</label>
+                            <ul>
+                                <li ng-repeat="status_type in types">
+                                    <input type="radio" ng-model="type" value="{{status_type.id}}" />{{status_type.label}}
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <button type="submit"><span class="icon-check"></span>Save</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
