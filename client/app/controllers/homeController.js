@@ -32,7 +32,7 @@
                     console.log(result.data);                                                    
                 });
             }
-        }
+        };
         
         vm.loadProject = function (projectId, e) {
             e.preventDefault();
@@ -43,7 +43,19 @@
             todoService.getProject(projectId).then(function (result) {
                 vm.tasks = result.data.tasks;
             });
-        }
+        };
+        
+        vm.newCategory = function(){
+            console.log("Trying to add a new category");
+            var category = { 
+                id:null, 
+                owner:1, 
+                label:"New Category", 
+                projects:[],
+                editing:true
+            }
+            vm.categories.push(category);
+        };
         
         initialize();
     });

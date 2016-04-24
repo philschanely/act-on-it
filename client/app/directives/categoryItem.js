@@ -8,10 +8,6 @@
             templateUrl: "app/views/category/item.html",
             controller: function($scope){
                 
-                // TODO: Set real owner here once authentication is enabled.
-                $scope.owner = 1;
-                $scope.editing = false;
-                
                 $scope.checkKey = function(e) {
                     // TODO: Is there a better way to check which keys were pressed?
                     if (e.which == 27 || e.which == 9) {
@@ -26,6 +22,8 @@
                     console.log("Loading category item");
                     $scope.label = $scope.category.label;
                     $scope.id = $scope.category.id;
+                    $scope.owner = $scope.category.owner; 
+                    $scope.editing = $scope.category.editing ? $scope.category.editing : false;
                 };
                 $scope.save = function (e) {
                     console.log(e);
