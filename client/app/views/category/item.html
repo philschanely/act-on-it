@@ -1,0 +1,14 @@
+<p ng-hide="editing" class="category-header">
+    <a href="/#/category/{{ id }}" class="name" 
+       ng-click="edit(id, $event)">
+        {{label}}
+    </a>
+    <a class="link-options" href="/#/category/options/{{ id }}">
+        <span class="icon-options">View options</span>
+    </a>
+</p>
+<form ng-show="editing" class="category-editor" 
+      ng-submit="save($event)" ng-keyup="checkKey($event)">
+    <input value="{{label}}" type="text" name="label" class="category-label" />
+    <button type="submit" class="btn-save-category">Save</button>
+</form>

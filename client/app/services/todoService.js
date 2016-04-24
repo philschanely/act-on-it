@@ -10,24 +10,23 @@
                 });
                 return d.promise;
             },
-            getCategory: function (_id) {
+            getCategory: function (category_id) {
                 var d = $q.defer();
-                $http.get('/api/category/' + _id).then(function (data) {
+                $http.get('/api/category/' + category_id).then(function (data) {
                     d.resolve(data);
                 });
                 return d.promise;
             },
-            saveCategory: function (params) {
+            getCategoryProjects: function (category_id) {
                 var d = $q.defer();
-                var url = params._id ? '/api/category/' + params._id : '/api/category';
-                $http.post(url, params).then(function (data) {
+                $http.get('/api/project/in_category/' + category_id).then(function (data) {
                     d.resolve(data);
                 });
                 return d.promise;
             },
-            getCategoryProjects: function (_id) {
+            getProject: function (project_id) {
                 var d = $q.defer();
-                $http.get('/api/project/in_category/' + _id).then(function (data) {
+                $http.get('/api/project/' + project_id).then(function (data) {
                     d.resolve(data);
                 });
                 return d.promise;
@@ -37,6 +36,19 @@
                 $http.get('/api/tasks').then(function (data) {
                     d.resolve(data);
                 });
+                return d.promise;
+            },
+            saveCategory: function (params) {
+                var d = $q.defer();
+                if (params.id) {
+                    $http.put('/api/category/' + params.id, params).then(function (data) {
+                        d.resolve(data);
+                    });
+                } else {
+                    $http.post('/api/category', params).then(function (data) {
+                        d.resolve(data);
+                    });
+                }
                 return d.promise;
             }
         };

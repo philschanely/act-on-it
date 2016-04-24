@@ -1,0 +1,14 @@
+<form>
+    <ul class="list-unstyled">
+        <li class="form-group">
+           <label for="label">Label</label>
+            <input id="label" name="label" ng-model="vm.label" type="text" class="form-control" />
+        </li>
+        <li class="form-group">
+            <label for="description">Description</label>
+            <textarea id="description" name="description" ng-model="vm.description" rows="4" class="form-control"></textarea>
+        </li>
+    </ul>
+    <button name="submit-category" class="btn btn-success" ng-click="vm.saveCategory()">Save</button>
+    <a href="/#/" class="btn btn-default">Cancel</a>
+</form>

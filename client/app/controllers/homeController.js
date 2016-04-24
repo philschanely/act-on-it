@@ -10,11 +10,6 @@
         var initialize = function () {
             todoService.getCategories().then(function (result) {
                 vm.categories = result.data;
-                vm.categories.forEach(function(o, i){
-                    todoService.getCategoryProjects(o._id).then(function (result) {
-                        o.projects = result.data;
-                    });
-                });
             });
             todoService.getTasks().then(function (result) {
                 vm.tasks = result.data;
@@ -26,11 +21,16 @@
             var $o = $(e.target), 
                 $category = $o.closest('.category');
             changeSelected($category);
-            console.log($category);
             if (categoryId === 'all') {
                 vm.taskMsg = "Loading all items ...";
+                todoService.getTasks().then(function (result) {
+                    vm.tasks = result.data;
+                });
             } else {
                 vm.taskMsg = "Loading cateogry ..." + categoryId.toString();
+                todoService.getCategory(categoryId).then(function (result) {
+                    console.log(result.data);                                                    
+                });
             }
         }
         
@@ -39,8 +39,10 @@
             var $o = $(e.target),
                 $project = $o.closest('.project');
             changeSelected($project);
-            console.log($project);
             vm.taskMsg = "Loading project ..." + projectId.toString();
+            todoService.getProject(projectId).then(function (result) {
+                vm.tasks = result.data.tasks;
+            });
         }
         
         initialize();
