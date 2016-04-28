@@ -1,20 +1,21 @@
 <div class="modal panel-task-editor" role="dialog">
     <div class="modal-dialog">
         <div class="modal-content">
-            <form ng-submit="saveTask($event)">
+            <form ng-submit="vm.saveTask($event)">
                 <input type="checkbox" ng-model="status" />
                 <ul class="task-data">
                     <li>
-                        <label for="">Status</label>
-                        <input type="checkbox" ng-model="status" />
+                        <label for="status">Status</label>
+                        <input name="status" type="checkbox" ng-model="status" />
                     </li>
                     <li>
-                        <label for="">Due:</label>
-                        <input type="text" ng-model="date_due" />
+                        <label for="date_due">Due:</label>
+                        <input name="date_due" type="text" ng-model="date_due" />
                     </li>
                     <li>
-                        <label for=""></label>
-                        <input type="text" ng-model="body" />
+                        <label for="body"></label>
+                        <input name="body" type="text" ng-model="body" />
+                        {{body}}
                     </li>
                 </ul>
                 <div class="task-options">

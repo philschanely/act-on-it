@@ -1,21 +1,17 @@
 (function () {
     'use strict';
     
-    angular.module('todo').controller('homeController', function (todoService) {
+    angular.module('todo').controller('homeController', function (todoService, $modal) {
         var vm = this;
         
         vm.categories = [];
         vm.taskMsg = "No message yet.";
         vm.newTask = { 
-            editing: false, 
             id:null, 
-            body:"", 
-            date_due:"", 
+            body:"Task details go here", 
+            date_due:"today", 
             status:"0",
-            type:"1",
-            edit: function () {
-                alert();
-            }
+            type:"1"
         };
         vm.activeTask = null;
         
@@ -71,8 +67,15 @@
         
         vm.newTask = function(e){
             console.log("Trying to create a new task.");
-            vm.activeTask = vm.newTask;
-            //vm.activeTask.edit();
+            vm.activeTask = $modal({
+                id: vm.newTask.id,
+                body: vm.newTask.body,
+                status: vm.newTask.status,
+                type: vm.newTask.type, 
+                templateUrl: "app/views/task/edit.html", 
+                show:false 
+           });
+            vm.activeTask.$promise.then(vm.activeTask.show);
         };
         
         vm.editTask = function(e){
