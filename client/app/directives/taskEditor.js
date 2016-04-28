@@ -1,6 +1,7 @@
 (function(){
     angular.module('todo').directive('taskEditor', function(todoService){
         return {
+            replace:true,
             restrict: "E",
             scope: {
                 task: "="

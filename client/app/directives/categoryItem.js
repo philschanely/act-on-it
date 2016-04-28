@@ -58,8 +58,7 @@
                 };
                
                 $scope.initialize();
-            },
-            controllerAs: "ci"
+            }
        };
     });
 })();
