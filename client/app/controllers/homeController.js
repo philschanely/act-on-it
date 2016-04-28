@@ -1,7 +1,7 @@
 (function () {
     'use strict';
     
-    angular.module('todo').controller('homeController', function (todoService) {
+    angular.module('todo').controller('homeController', function (todoService, Task) {
         var vm = this;
         
         vm.categories = [];
@@ -24,7 +24,7 @@
                 vm.categories = result.data;
             });
             todoService.getTasks().then(function (result) {
-                vm.tasks = result.data;
+                vm.tasks = Task.transformer(result.data);
             });
         };
         
@@ -65,7 +65,7 @@
                 label:"New Category", 
                 projects:[],
                 editing:true
-            }
+            };
             vm.categories.push(category);
         };
         

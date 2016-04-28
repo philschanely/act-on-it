@@ -7,7 +7,7 @@
 
                 this.initialize = function() {
                     console.log('Category list loaded');
-                }
+                };
                 
                 this.initialize();
             }

@@ -20,7 +20,27 @@ server.register([
                 html: require('handlebars')
             },
             relativeTo: __dirname,
-            path: './client/app/views/'
+            path: './client/build'
+        });
+
+        server.route({
+            method: 'GET',
+            path: '/scripts/{param*}',
+            handler: {
+                directory: {
+                    path: './client/build/scripts'
+                }
+            }
+        });
+
+        server.route({
+            method: 'GET',
+            path: '/styles/{param*}',
+            handler: {
+                directory: {
+                    path: './client/build/styles'
+                }
+            }
         });
 
         // set up routes for client

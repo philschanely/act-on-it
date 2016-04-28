@@ -52,7 +52,7 @@
                         changeSelected();
                     }
                     $scope.selected = true;
-                }
+                };
                 $scope.cancelEdit = function() {
                     $scope.editing = false;
                 };
