@@ -30,7 +30,6 @@
     "gulp": "^3.9.1",
     "gulp-clean-css": "^2.0.6",
     "gulp-concat": "^2.6.0",
-    "gulp-connect": "^3.2.2",
     "gulp-filter": "^3.0.1",
     "gulp-jshint": "^2.0.0",
     "gulp-less": "^3.0.5",
