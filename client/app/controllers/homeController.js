@@ -1,8 +1,9 @@
 (function () {
     'use strict';
     
-    angular.module('todo').controller('homeController', function (todoService, $modal) {
-        var vm = this;
+    angular.module('todo').controller('homeController', function (todoService, $modal, Task) {
+
+        var vm = this; 
         
         vm.categories = [];
         vm.taskMsg = "No message yet.";
@@ -20,7 +21,7 @@
                 vm.categories = result.data;
             });
             todoService.getTasks().then(function (result) {
-                vm.tasks = result.data;
+                vm.tasks = Task.transformer(result.data);
             });
         };
         
@@ -61,7 +62,7 @@
                 label:"New Category", 
                 projects:[],
                 editing:true
-            }
+            };
             vm.categories.push(category);
         };
         
